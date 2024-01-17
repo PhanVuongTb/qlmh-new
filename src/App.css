@@ -1,42 +1,124 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Work Sans", sans-serif;
+}
+br {
+  height: 0px !important;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+li > ul {
+  transform: translatex(100%) scale(0);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+li:hover > ul {
+  transform: translatex(101%) scale(1);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+li > button svg {
+  transform: rotate(-90deg);
+}
+li:hover > button svg {
+  transform: rotate(-270deg);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.group:hover .group-hover\:scale-100 {
+  transform: scale(1);
+}
+.group:hover .group-hover\:-rotate-180 {
+  transform: rotate(180deg);
+}
+.scale-0 {
+  transform: scale(0);
+}
+.min-w-32 {
+  min-width: 9rem;
+}
+
+.max-w-96 {
+  max-width: 27rem;
+}
+
+.dark {
+  width: 100%;
+  background-color: #222222;
+  background-image: none !important;
+  color: #f5f5f5;
+  stroke: #f5f5f5;
+}
+.light {
+  width: 100%;
+  color: #222222;
+  stroke: #000;
+}
+
+.login {
+  max-width: 424px;
+  width: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.title-tab {
+  display: flex;
+  max-width: 91px;
+  height: 38px;
+  padding: 14px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+.box-shadow-table {
+  box-shadow: 0px -1px 0px 0px #e1e1e1 inset;
+}
+
+.active-tab {
+  background: #577cff;
+  color: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+}
+li.font-medium:hover > button svg {
+  transform: none !important;
+}
+li.font-medium > button svg {
+  transform: rotate(359deg);
+}
+
+.css-art2ul-ValueContainer2 {
+  height: 50px;
+}
+
+input:focus-visible {
+  outline: 1px solid #577cff;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+.react-datepicker-wrapper .react-datepicker__input-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+@media (min-width: 320px) {
+  .container {
+    max-width: 100% !important;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 500px) {
+  .title-tab {
+    padding: 14px 18px !important;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.07px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
