@@ -4,12 +4,40 @@ import logo from "./assets/logo.svg";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Swal from 'sweetalert2';
+
 const LoginPage = () => {
   const history = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  // const handleUsername = (e) => {
+  //   setUsername(e.target.value);
+  // };
+
+  // const handlePassword = (e) => {
+  //   setPassword(e.target.value);
+  // };
+
+  // const handleLogin = async () => {
+  //   try {
+  //     // Make a login request using Axios
+  //     const response = await axios.post(
+  //       "https://qlmh.dion.vn/account/api/login",
+  //       {
+  //         username,
+  //         password,
+  //       }
+  //     );
+
+  //     const userData = response.data;
+
+  //     localStorage.setItem("userData", JSON.stringify(userData));
+  //     toast.success("Đăng nhập thành công");
+  //     history("/license-plate-list");
+  //   } catch (error) {
+  //     console.error("Login failed", error);
+  //   }
+  // };
 
   useEffect(() => {
     const token = localStorage.getItem("userData");
@@ -37,20 +65,10 @@ const LoginPage = () => {
           password,
         }
       );
-      if(response.data.message ==  "SUCCESS"){
-        const userData = response.data;
-        localStorage.setItem("userData", JSON.stringify(userData));
-        toast.success("Đăng nhập thành công");
-        history("/license-plate-list");
-      }
-      else{
-        Swal.fire(
-          "Đăng nhập không thành công",
-          "Vui lòng kiểm tra lại thông tin",
-          "error"
-        )
-      }
-      
+      const userData = response.data;
+      localStorage.setItem("userData", JSON.stringify(userData));
+      toast.success("Đăng nhập thành công");
+      history("/license-plate-list");
     } catch (error) {
       console.error("Login failed", error);
     }
