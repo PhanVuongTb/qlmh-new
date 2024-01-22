@@ -103,7 +103,7 @@ const LicensePage = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_URL_HEAD}orders/api/list-paging`,
+        "https://qlmh.dion.vn/orders/api/list-paging",
         {
           keyword: keyword,
           orderStatusId,
@@ -238,7 +238,7 @@ const LicensePage = () => {
   const getProductDetails = async (productId) => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_HEAD}orders/api/get-detail-order-sort/${productId}`
+        `https://qlmh.dion.vn/orders/api/get-detail-order-sort/${productId}`
       );
       setProductDetails(response.data);
     } catch (error) {
@@ -267,7 +267,7 @@ const LicensePage = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_URL_HEAD}orders/api/update-order-sort`,
+        `https://qlmh.dion.vn/orders/api/update-order-sort`,
         {
           Id: productId,
           OrderStatusId: orderStatusId,
@@ -329,7 +329,7 @@ const LicensePage = () => {
   const getProvince = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_HEAD}province/api/list`
+        "https://qlmh.dion.vn/province/api/list"
       );
 
       const data = response.data.data;
@@ -347,7 +347,7 @@ const LicensePage = () => {
   const getProductCategory = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_HEAD}productbrand/api/list`
+        "https://qlmh.dion.vn/productbrand/api/list"
       );
 
       const data = response.data.data;
@@ -365,7 +365,7 @@ const LicensePage = () => {
   const getProductBrand = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_URL_HEAD}productcategory/api/list`
+        "https://qlmh.dion.vn/productcategory/api/list"
       );
 
       const data = response.data.data;
